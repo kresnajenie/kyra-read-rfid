@@ -13,7 +13,7 @@ rfid = ''
 
 try:
 	while True:
-		GPIO.setwarnings(False)
+		# GPIO.setwarnings(False)
 		print("Hold a tag near the reader")
 		id, text= reader.read()
 		if id != rfid:
