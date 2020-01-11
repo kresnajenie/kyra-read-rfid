@@ -3,7 +3,6 @@ import sys
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
-GPIO.setwarnings(false)
 
 now = datetime.now()
 
@@ -13,6 +12,7 @@ rfid = ''
 
 try:
 	while True:
+		GPIO.setwarnings(False)
 		print("Hold a tag near the reader")
 		id, text= reader.read()
 		if id != rfid:
@@ -20,7 +20,7 @@ try:
 			time.sleep(2)
 		else:
 			pass
-		
+
 		rfid = id
 except KeyboardInterrupt:
 	GPIO.cleanup()
