@@ -76,7 +76,7 @@ while continue_reading:
     if status == MIFAREReader.MI_OK:
         print ("Card detected")
         # Get the UID of the card
-        (status, uid) = MIFAREReader.MFRC522_SelectTag()
+        (uid) = MIFAREReader.MFRC522_SelectTag()
         # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
             if uidToString(uid) != rfid:
