@@ -29,6 +29,8 @@
 import RPi.GPIO as GPIO
 import MFRC522
 import signal
+import time
+
 
 continue_reading = True
 
@@ -63,6 +65,8 @@ print("Press Ctrl-C to stop.")
 # If one is near it will get the UID and authenticate
 
 rfid = ''
+# seconds passed since epoch
+seconds = 1545925769.9618232
 
 while continue_reading:
     # Scan for cards
@@ -76,7 +80,9 @@ while continue_reading:
         # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
             if uidToString(uid) != rfid:
+                local_time = time.ctime(seconds)
                 print("Card read UID: %s" % uidToString(uid))
+                print("Time:", local_time)
             else:
                 pass
         else:
