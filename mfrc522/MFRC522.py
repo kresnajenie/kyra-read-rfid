@@ -349,9 +349,9 @@ class MFRC522:
 
         # Check if an error occurred
         if not (status == self.MI_OK):
-            # self.logger.error("AUTH ERROR!!")
+            self.logger.error("AUTH ERROR!!")
         if not (self.Read_MFRC522(self.Status2Reg) & 0x08) != 0:
-            # self.logger.error("AUTH ERROR(status2reg & 0x08) != 0")
+            self.logger.error("AUTH ERROR(status2reg & 0x08) != 0")
 
         # Return the status
         return status
