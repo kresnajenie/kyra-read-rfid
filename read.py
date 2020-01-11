@@ -85,6 +85,8 @@ while continue_reading:
                 print("Card read UID: %s" % uidToString(uid))
                 print("Time :", now)
                 time.sleep(2)
+            else: 
+                print("Same card")
         else:
             print("Authentication error")
         
