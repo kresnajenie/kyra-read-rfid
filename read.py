@@ -13,9 +13,10 @@ current_time = now.strftime("%H:%M:%S")
 rfid = ''
 
 try:
+	print("Hold a tag near the reader")
+
 	while True:
 		# GPIO.setwarnings(False)
-		print("Hold a tag near the reader")
 		id, text= reader.read()
 		if id != rfid:
 			print("ID: %s\nTIME: %s" % (id, current_time))
