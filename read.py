@@ -1,5 +1,5 @@
 from time import sleep
-import time
+import datetime
 import sys
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
