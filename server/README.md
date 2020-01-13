@@ -1,0 +1,14 @@
+# Installation on Raspberry Pi
+1. Install NPM  \
+https://www.instructables.com/id/Install-Nodejs-and-Npm-on-Raspberry-Pi/
+2. Install  Socket Server\
+`npm install --save socket.io`
+3. Install Socket Client \
+`npm install --save socket.io-client`
+4. Creating an Express App \
+` npm init ` \
+Enter Everything 
+5. Install Express \
+` npm install express --save`
+6. Install Nodemon \
+` npm install nodemon`
