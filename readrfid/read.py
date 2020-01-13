@@ -33,6 +33,7 @@ import signal
 import time
 from time import sleep
 from datetime import datetime
+from socket import emit_rfid
 
 continue_reading = True
 
@@ -75,16 +76,19 @@ while continue_reading:
 
     # If a card is found
     if status == MIFAREReader.MI_OK:
-        print ("Card detected")
+        # print ("Card detected")
 
         # Get the UID of the card
         (status, uid) = MIFAREReader.MFRC522_SelectTagSN()
         # If we have the UID, continue
         if status == MIFAREReader.MI_OK:
             if rfid != uidToString(uid):
-                print("Card read UID: %s" % uidToString(uid))
+                rfid_id = uidToString(uid)
+                print("Card read UID: %s" % rfid_id)
                 print("Time :", now)
+                emit_rfid(rfid_id)
                 time.sleep(2)
+                emit_rfid(None)
             else: 
                 print("Same card")
         else:
